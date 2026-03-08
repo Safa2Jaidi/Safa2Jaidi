@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "firebase-admin": "^12.2.0",
+    "react-hook-form": "^7.52.0"
+  }
+}

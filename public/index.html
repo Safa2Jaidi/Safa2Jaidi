@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>@Safa2Jaidi صفاء جعيدي</title>
+<link rel="icon" href="logo.png"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+/* CSS */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+body{
+margin: 0;
+padding: 0;
+font-family: "Cairo", sans-serif;
+}
+.footer {
+font-family: "Cairo", sans-serif;
+background-color: #333;
+color: whitesmoke;
+position: fixed;
+bottom: 0;
+width: 100%;
+text-align: center;
+padding: 10px 0;
+}
+.btn-group .btn {
+color: whitesmoke;
+background-color: #333;
+transition: background-color 0.3s, color 0.3s;
+border-bottom: none;
+border-top: none;
+border-left: 1px solid whitesmoke;
+border-right: 1px solid whitesmoke;
+border-radius: 0;
+}
+.btn-group .btn:last-child {
+border-radius: 0;
+border-left: none;
+}
+.btn-group .btn:first-child {
+border-radius: 0;
+border-right: none;
+}
+.btn-group .btn:hover {
+background-color: whitesmoke;
+color: #333;
+transition: background-color 1s, color 0.3s;
+}
+.container {
+font-family: "Cairo", sans-serif;
+font-optical-sizing: auto;
+font-weight: <weight>;
+font-style: normal;
+font-variation-settings: "slnt" 0;
+margin-top: 70px;
+width: 90%;
+align-items: center;
+text-align: center;
+display: flex;
+flex-direction: column;
+gap: 10px;
+margin-bottom: 100px;
+}
+p {
+text-align: right;
+color: #333;
+font-size: 20px;
+}
+
+a {
+font-size: 20px;
+color: red;
+text-decoration: none;
+}
+img {
+max-width: 120px;
+height: auto;
+transition: 0.5s;
+}
+img.PTp {
+filter: grayscale(100%);
+}
+.button-container {
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+.buttonqtp {
+flex: 1;
+padding: 10px 20px;       
+cursor: pointer;
+text-align: center;
+background-color: #333;
+color: whitesmoke;
+border: none;
+border-radius: 8px;
+}
+.buttonqtp:hover {
+background-color: whitesmoke;
+color: #333 !important;
+border: 1px solid #333; 
+transition: background-color 1s, color 0.3s;
+}
+.navbar-nav .nav-link {
+text-align: right;
+} 
+
+.logo {
+position: fixed;
+top: 0px;
+left: 10px;
+margin: 0;
+width: 55px; 
+height: 55px;
+background-size: cover;
+background-image: url('PTP.png');
+z-index: 9999; 
+}
+
+.navbar-brand {
+margin-left: auto;
+margin-right: 5px;
+}
+.navbar {
+background-color: #333; 
+}    
+
+.navbar-brand, .nav-link {
+color: whitesmoke !important; 
+font-family: "Cairo", sans-serif;
+font-optical-sizing: auto;
+font-weight: <weight>;
+font-style: normal;
+font-variation-settings: "slnt" 0;
+}
+.dropdown-menu {
+text-align: right;
+background-color: whitesmoke;
+}
+.navbar-toggler {
+border: 1px solid whitesmoke; 
+}
+.navbar-toggler-icon {
+background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggler:focus {
+outline: 2px solid whitesmoke; 
+}
+.dropdown-item {
+text-align: right;
+font-size: medium;
+}
+.dropdown-item:hover {
+background-color: #333;
+color: whitesmoke !important; 
+transition: background-color 1s, color 0.3s;
+}
+.navbar-toggler{
+margin-left: auto;
+margin: 0;
+color:whitesmoke;
+}
+.panel {
+display: none;
+background-color: #f8f9fa;
+padding: 10px;
+margin-top: 10px;
+border: 1px solid #333;
+}
+
+.arabic-text {
+    direction: rtl;
+    text-align: center;
+    font-size: 14px; 
+    line-height: 1.2;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+.Shar3ia{
+max-width: 40%;
+height: auto;
+}
+.links {
+display: inline;
+white-space: nowrap;
+font-size: medium;
+}
+.separator {
+display: inline;
+white-space: nowrap;
+margin: 0 5px; 
+}
+.responsive-img {
+            width: 160px;
+            height: auto;
+            cursor: pointer;
+        }
+        .fullsize-img {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .fullsize-img img {
+            max-width: 100%;
+            max-height: 100%;
+object-fit: contain;
+        }
+</style>
+</head>
+<body>
+<header>  
+    <div class="navbar">
+<div class="logo"></div></div>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="https://drive.google.com/file/d/12l3FwBkEsHEt0S6yybuTJ8wrKpVYhW1X/view?usp=sharing" target="_blank">صفاء جعيدي</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://youtube.com/playlist?list=PL6qKzftU_wpXzPJJyzHrhc43jzXgD_Xkn&feature=shared" target="_blank">المونتاج ببساطة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://drive.google.com/drive/folders/1AtTqwaO6IsDoXFKSs8ubDojWCGo4fda1?usp=sharing" target="_blank">أهداف وتحقق وتقييم</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                إلكترونيات المنهاج الفلسطيني
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="https://drive.google.com/drive/folders/1DMxgMfxLlZG9OsIBpLo-ehTG7O4aQYbK?usp=sharing">مجلد الإلكترونيات</a></li>
+                                <li><a class="dropdown-item" href="https://drive.google.com/file/d/1avtutGvlZHHRrYrXeTq4Ya9IDGbJKg9X/view?usp=sharing">ملف الوصول السريع</a></li>
+                                <li><a class="dropdown-item" href="https://youtube.com/playlist?list=PL6qKzftU_wpXHoTJHKKE7GliBNSDnCoT1&feature=shared">قائمة تشغيل الفيديوهات</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="https://drive.google.com/file/d/1cyIWEL9rmAYJfCggWMLTBFbWoOTAxwhP/view?usp=sharing" target="_blank">نشير إليها والبقية عليك</a>
+                        </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<div class="container">
+    <div id="panel1" class="panel">
+        <h3>Safa2Jaidi@gmail.com</h3>
+        <p class="arabic-text"></p>
+        <a class="links" href="https://www.youtube.com/@Safa2Jaidi/" style="color: red;">يوتيوب</a>
+        <span class="separator">|</span>
+        <a class="links" href="https://www.facebook.com/Safa2Jaidi" style="color: blue;">فيسبوك</a>
+    </div>
+    <div id="panel2" class="panel">
+        <h3>قلقيلية</h3>
+        <img class="Shar3ia" src="Qal.png" alt="صورة">
+        <p class="arabic-text">"نقطة التقاء، وسلة غذاء، ومدينة الصفاء"</p>
+        <a class="links" href="https://youtu.be/KhiTa5CBiqk" style="color: red;">رحلة إليها</a>
+        <span class="separator">|</span>
+        <a class="links" href="https://youtu.be/LmsP36F1iWw?t=16" style="color: rgb(0, 0, 0);">حديقتها</a>
+    </div>
+    <div id="panel3" class="panel">
+        <h3>فلسطين</h3>
+        <img class="Shar3ia" src="logo.png" alt="صورة">
+        <p class="arabic-text"></p>
+        <p class="arabic-text">اللهم أمناً وأماناً وسلاماً واطمئناناً ورحمة</p>
+        <a class="links" href="https://youtu.be/HLHlO9G_Vac" style="color: red;">رحلة إليها</a>
+        <span class="separator">|</span>
+        <a class="links" href="https://www.facebook.com/EngSafa2Jaidi/videos/1541926329289695/?locale=ar_AR" style="color: blue;">عن فلسطين</a>
+    </div>
+<img id="PTpImage" src="Palestine.png" alt="النسر">
+<div class="button-container">
+   
+    <button class="buttonqtp" onclick="openLink()">ملف الوصول</button>
+    <button class="buttonqtp" onclick="openLink1()">قوائم تشغيل</button>
+    <button class="buttonqtp" onclick="openLink2()">مجلد العمل</button>
+</div>
+<img src="qr.png" alt="مصغرة" class="responsive-img" onclick="showFullSizeImage()">
+    <div class="fullsize-img" id="fullsizeImg" onclick="hideFullSizeImage()">
+        <img src="qr.png" alt="كبيرة">
+    </div>
+</div>
+<div class="footer container-fluid">
+    <div class="btn-group w-100" role="group">
+        <button type="button" class="btn footer-link w-100" data-target="#panel1">التواصل</button>
+        <button type="button" class="btn footer-link w-100" data-target="#panel2">المدينة</button>
+        <button type="button" class="btn footer-link w-100" data-target="#panel3">الدولة</button>
+    </div>
+</div>
+<script>
+    /* JS */
+    document.getElementById
+    ("Paragraph").addEventListener("click", 
+    function() {
+    this.style.color = this.style.color === 
+    "black" ? "green" : "black";});
+    
+    const link = document.getElementById('PTpLink');
+    link.addEventListener('click', (event) => {
+    event.preventDefault();
+    alert('متجددة على نفس الرابط');
+    window.location.href = link.href;});
+    
+    document.getElementById
+    ('PTpImage').addEventListener
+    ('click', function() {
+    this.classList.toggle('PTp');
+    });
+    
+   
+
+   
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js">
+    </script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+   $(document).ready(function() {
+    $('.footer-link').click(function(e) {
+        e.preventDefault();
+        var target = $(this).data('target');
+        if ($(target).is(':visible')) {
+            $(target).hide();
+        } else {
+            $('.panel').hide();
+            $(target).show();
+        }
+    });
+});
+</script>
+<script>
+    function showFullSizeImage() {
+        document.getElementById('fullsizeImg').style.display = 'flex';
+        setTimeout(function() {
+                window.open('https://drive.google.com/file/d/12l3FwBkEsHEt0S6yybuTJ8wrKpVYhW1X/view?usp=sharing', '_blank');
+            }, 3000);
+    }
+
+    function hideFullSizeImage() {
+        document.getElementById('fullsizeImg').style.display = 'none';
+    }
+    
+    </script>
+</script>
+
+<script>
+    function openLink() {
+            window.open('https://bit.ly/Safa2Jaidi', '_blank', 'noopener,noreferrer');
+        }
+
+        function openLink1() {
+            window.open('https://www.youtube.com/@Safa2Jaidi/playlists', '_blank', 'noopener,noreferrer');
+        }
+
+        function openLink2() {
+            window.open('https://drive.google.com/drive/folders/1mZWRoyRAxBgixSuAQL4246lyA0fb4vS5?usp=sharing', '_blank', 'noopener,noreferrer');
+        }
+    </script>
+
+</body>
+</html>

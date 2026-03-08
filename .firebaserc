@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "safa2qtp"
+  },
+  "targets": {
+    "safa2qtp": {
+      "hosting": {
+        "safa2jaidi": [
+          "safa2jaidi"
+        ]
+      }
+    }
+  }
+}
