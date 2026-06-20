@@ -1,17 +1,6 @@
 {
   "hosting": {
-    "target": "safa2jaidi",
-    "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "destination": "public/index.html"
-      }
-    ]
+    "site": "exam04",
+    "public": "public"
   }
 }

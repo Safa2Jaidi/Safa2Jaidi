@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+نتيجة الاختبار
+</title>
+
+<!-- أيقونة التبويب -->
+
+<link rel="icon"
+      type="image/png"
+      href="logo.png">
+
+<!-- خط Cairo -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css?v=4.2">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        نتيجة الاختبار
+    </h1>
+
+    <div class="exam-box">
+
+        <h2 id="score"></h2>
+
+        <div class="result-details">
+
+            <div class="result-card">
+
+                <h3>
+                    النسبة المئوية
+                </h3>
+
+                <p id="percentage"></p>
+
+            </div>
+
+            <div class="result-card">
+
+                <h3>
+                    الإجابات الصحيحة
+                </h3>
+
+                <p id="correct"></p>
+
+            </div>
+
+            <div class="result-card">
+
+                <h3>
+                    الإجابات الخاطئة
+                </h3>
+
+                <p id="wrong"></p>
+
+            </div>
+
+        </div>
+
+        <div class="grade-box">
+
+            <h3>
+                التقدير
+            </h3>
+
+            <p id="grade"></p>
+
+        </div>
+
+        <div class="message-box">
+
+            <p id="message"></p>
+
+        </div>
+
+        <div class="result-buttons">
+
+            <button
+                class="option-btn"
+                onclick="restartExam()">
+
+                إعادة الاختبار
+
+            </button>
+
+            <button
+                class="option-btn"
+                onclick="goHome()">
+
+                العودة للرئيسية
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- لوحة التحية -->
+
+    <div class="thanks-box">
+
+        <img src="logo.png"
+             alt="شعار المدرسة"
+             class="thanks-logo">
+
+        <p>
+            مع تحيات
+        </p>
+
+        <p>
+            <strong>
+                م. صفاء جعيدي
+            </strong>
+        </p>
+
+        <p>
+           معلمة التكنولوجيا والبرمجة
+        </p>
+
+        <p>
+            ومشرفة اللجنة التكنولوجية في المدرسة
+        </p>
+
+    </div>
+
+</div>
+
+<!-- التذييل -->
+
+<footer class="footer">
+
+    © مدرسة إناث قلقيلية الشرعية
+
+    <br>
+
+    وزارة الأوقاف والشؤون الدينية الفلسطينية
+
+</footer>
+
+<script>
+
+let score =
+    Number(
+        localStorage.getItem("score")
+    );
+
+let totalQuestions = 5;
+
+let percentage =
+    Math.round(
+        (score / totalQuestions) * 100
+    );
+
+let wrong =
+    totalQuestions - score;
+
+document.getElementById("score").innerText =
+    "لقد حصلت على " +
+    score +
+    " من " +
+    totalQuestions;
+
+document.getElementById("percentage").innerText =
+    percentage + "%";
+
+document.getElementById("correct").innerText =
+    score;
+
+document.getElementById("wrong").innerText =
+    wrong;
+
+/* التقدير */
+
+let grade = "";
+let message = "";
+
+if (percentage >= 90) {
+
+    grade = "ممتاز";
+
+    message =
+    "أداء متميز، أحسنتِ الإجابة وأظهرتِ إتقاناً رائعاً.";
+
+}
+
+else if (percentage >= 80) {
+
+    grade = "جيد جداً";
+
+    message =
+    "نتيجة رائعة، واصلي التقدم والتميز.";
+
+}
+
+else if (percentage >= 70) {
+
+    grade = "جيد";
+
+    message =
+    "أداء جيد، مع فرصة لتحقيق نتائج أعلى.";
+
+}
+
+else if (percentage >= 60) {
+
+    grade = "مقبول";
+
+    message =
+    "بداية جيدة، ويمكن تحسين النتيجة بالمزيد من التدريب.";
+
+}
+
+else {
+
+    grade = "بحاجة إلى تحسين";
+
+    message =
+    "لا بأس، التعلم رحلة مستمرة والمحاولة القادمة ستكون أفضل.";
+
+}
+
+document.getElementById("grade").innerText =
+    grade;
+
+document.getElementById("message").innerText =
+    message;
+
+/* إعادة الاختبار */
+
+function restartExam() {
+
+    localStorage.removeItem("answers");
+
+    localStorage.removeItem("currentQuestion");
+
+    localStorage.removeItem("score");
+
+    window.location.href =
+        "exam.html";
+
+}
+
+/* العودة للرئيسية */
+
+function goHome() {
+
+    window.location.href =
+        "index.html";
+
+}
+
+</script>
+
+</body>
+
+</html>

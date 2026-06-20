@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+الاختبار الإلكتروني
+</title>
+
+<!-- أيقونة التبويب -->
+
+<link rel="icon"
+      type="image/png"
+      href="logo.png">
+
+<!-- خط Cairo -->
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap"
+      rel="stylesheet">
+
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css?v=4.2">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        الاختبار التجريبي
+    </h1>
+
+    <!-- المؤقت -->
+
+    <div id="timer">
+        05:00
+    </div>
+
+    <!-- شريط التقدم -->
+
+    <div class="progress-wrapper">
+
+        <div class="progress-text">
+
+            نسبة الإنجاز:
+            <span id="progress-percent">
+                0%
+            </span>
+
+        </div>
+
+        <div class="progress-container">
+
+            <div id="progress-bar"></div>
+
+        </div>
+
+    </div>
+
+    <!-- العدادات -->
+
+    <div class="stats">
+
+        <div id="answered-count">
+            مجاب عنها: 0
+        </div>
+
+        <div id="remaining-count">
+            متبقي: 5
+        </div>
+
+    </div>
+
+    <!-- لوحة الأسئلة -->
+
+    <h3 class="palette-title">
+        لوحة الأسئلة
+    </h3>
+
+    <div id="question-palette"></div>
+
+    <!-- صندوق السؤال -->
+
+    <div class="question-box">
+
+        <h2 id="question-number">
+            السؤال 1 من 5
+        </h2>
+
+        <p id="question-text"></p>
+
+        <div id="options"></div>
+
+    </div>
+
+    <!-- أزرار التنقل -->
+
+    <div class="nav-buttons">
+
+        <button id="prev-btn"
+                onclick="previousQuestion()">
+
+            السابق
+
+        </button>
+
+        <button id="next-btn"
+                onclick="nextQuestion()">
+
+            التالي
+
+        </button>
+
+    </div>
+
+    <!-- زر الإنهاء -->
+
+    <div class="finish-section">
+
+        <button id="finish-btn"
+                onclick="finishExam()">
+
+            إنهاء الاختبار
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- التذييل -->
+
+<footer class="footer">
+
+    © مدرسة إناث قلقيلية الشرعية
+
+    <br>
+
+    وزارة الأوقاف والشؤون الدينية الفلسطينية
+
+</footer>
+
+<!-- ملفات البرمجة -->
+
+<script src="questions.js"></script>
+
+<script src="exam.js"></script>
+
+<!-- نافذة إنهاء الاختبار -->
+
+<div id="finish-modal"
+     class="modal">
+
+    <div class="modal-content">
+
+        <h2>
+            تأكيد إنهاء الاختبار
+        </h2>
+
+        <div id="modal-message">
+
+            هل تريد إنهاء الاختبار؟
+
+        </div>
+
+        <div class="modal-buttons">
+
+            <button id="review-btn">
+
+                مراجعة الأسئلة
+
+            </button>
+
+            <button id="submit-btn">
+
+                تسليم الاختبار
+
+            </button>
+
+            <button id="cancel-btn">
+
+                إلغاء
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
