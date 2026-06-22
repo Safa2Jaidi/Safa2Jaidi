@@ -2,6 +2,12 @@
 STYLE.CSS
 منصة الاختبار الإلكتروني - الإصدار 4 النهائي
 ================================================== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Tajawal',sans-serif;
+}
 
 *{
 margin:0;
@@ -628,17 +634,6 @@ font-size:20px;
 }
 
 .school-link,
-.school-link:visited {
-    color: #22e3d1;
-    text-decoration: none;
-}
-
-.school-link:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-.school-link,
 .school-link:link,
 .school-link:visited {
     color: #28d7c5;
@@ -649,4 +644,212 @@ font-size:20px;
 .school-link:hover {
     color: #ffffff;
     text-decoration: underline;
+}
+
+.login-input{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#162d4d;
+color:white;
+font-size:17px;
+outline:none;
+margin-bottom:18px;
+}
+
+.login-input::placeholder{
+color:#bfc7d5;
+}
+
+#message{
+margin-top:15px;
+font-weight:700;
+color:#ff5252;
+}
+
+/* ==========================================
+هوية الأزرار الموحدة - V5
+========================================== */
+
+.start-btn,
+.nav-buttons button,
+#finish-btn {
+
+    background: #14d6b5;
+    color: #ffffff;
+
+}
+
+.start-btn:hover,
+.nav-buttons button:hover,
+#finish-btn:hover {
+
+    background: #18e6c2;
+
+}
+
+.login-btn,
+.admin-btn {
+
+    background: #14d6b5 !important;
+    color: #ffffff !important;
+
+}
+
+.login-title{
+
+    color:#14d6b5;
+
+    font-size:24px;
+
+    font-weight:800;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+}
+
+.login-title{
+    color:#14d6b5 !important;
+}
+
+.top-bar{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:15px;
+margin-bottom:25px;
+background:#0d203b;
+padding:18px 25px;
+border-radius:18px;
+border:1px solid rgba(20,214,181,.25);
+}
+
+.top-bar h2{
+margin:0;
+color:#ffffff;
+font-size:32px;
+font-weight:800;
+}
+
+.home-btn{
+background:#14d6b5;
+color:#ffffff;
+text-decoration:none;
+padding:12px 25px;
+border-radius:12px;
+font-weight:700;
+transition:.25s;
+}
+
+.home-btn:hover{
+transform:translateY(-2px);
+}
+
+.lock-btn{
+background:none;
+border:none;
+font-size:30px;
+cursor:pointer;
+padding:0;
+}
+
+.title-card{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+width:100%;
+
+background:#0d203b;
+border-radius:18px;
+border:1px solid rgba(20,214,181,.25);
+
+padding:20px 30px;
+margin-bottom:20px;
+
+box-sizing:border-box;
+}
+
+.title-center{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:15px;
+font-size:32px;
+font-weight:800;
+color:#ffffff;
+}
+
+.lock-btn{
+background:none;
+border:none;
+font-size:34px;
+cursor:pointer;
+padding:0;
+}
+
+.back-btn{
+background:#14d6b5;
+color:#081325;
+text-decoration:none;
+padding:12px 24px;
+border-radius:12px;
+font-weight:700;
+font-size:16px;
+transition:.25s;
+}
+
+.back-btn:hover{
+transform:translateY(-2px);
+}
+
+.login-btn,
+.results-btn{
+    
+height:70px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+font-weight:700;
+border-radius:14px;
+}
+
+.login-btn,
+.results-btn{
+transition:all .25s ease;
+}
+
+.login-btn:hover,
+.results-btn:hover{
+transform:translateY(-2px);
+filter:brightness(1.05);
+}
+
+.login-input{
+transition:.25s;
+}
+
+.login-input:focus{
+outline:none;
+box-shadow:0 0 0 3px rgba(20,214,181,.25);
+}
+
+.footer{
+margin-top:40px;
+padding:20px;
+text-align:center;
+
+background:#0d203b;
+
+border-radius:18px;
+
+border:1px solid rgba(20,214,181,.25);
+
+color:#cfd8e3;
+
+line-height:1.9;
 }

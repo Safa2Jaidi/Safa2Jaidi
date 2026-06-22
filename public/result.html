@@ -113,6 +113,14 @@
             </button>
 
             <button
+    class="option-btn"
+    onclick="openResults()">
+
+    لوحة النتائج
+
+</button>
+
+            <button
                 class="option-btn"
                 onclick="goHome()">
 
@@ -166,6 +174,8 @@
 
 </footer>
 
+<!-- داخل script استبدلي المحتوى الحالي بالكامل بهذا -->
+
 <script>
 
 let score =
@@ -197,6 +207,65 @@ document.getElementById("correct").innerText =
 
 document.getElementById("wrong").innerText =
     wrong;
+
+/* حفظ النتيجة في MongoDB */
+
+async function saveResult() {
+
+    try {
+
+        const currentUser =
+            JSON.parse(
+                localStorage.getItem("currentUser")
+            );
+
+        if (!currentUser) return;
+
+        await fetch(
+            "/api/results/save",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                    "application/json"
+                },
+
+                body: JSON.stringify({
+
+                    username:
+                        currentUser.username,
+
+                    score:
+                        score,
+
+                    total:
+                        totalQuestions,
+
+                    percentage:
+                        percentage
+
+                })
+
+            }
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(
+            "Save Result Error:",
+            error
+        );
+
+    }
+
+}
+
+/* استدعاء الحفظ */
+
+saveResult();
 
 /* التقدير */
 
@@ -275,6 +344,12 @@ function goHome() {
 
     window.location.href =
         "index.html";
+
+}
+function openResults() {
+
+    window.location.href =
+        "admin.html";
 
 }
 

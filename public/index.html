@@ -1,130 +1,287 @@
 <!DOCTYPE html>
+
 <html lang="ar" dir="rtl">
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
-        من الصفر إلى النشر | المدارس الشرعية
-    </title>
+<title>من الصفر إلى النشر</title>
 
-    <!-- أيقونة التبويب -->
+<link rel="icon" type="image/png" href="logo.png">
 
-    <link rel="icon"
-          type="image/png"
-          href="logo.png">
-
-    <!-- خط Cairo -->
-
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
-
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap"
-          rel="stylesheet">
-
-          <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css?v=4.2">
+<link rel="stylesheet" href="style.css?v=5.0">
+
+<style>
+    .demo-info{
+margin-top:12px;
+margin-bottom:18px;
+text-align:center;
+line-height:1.9;
+color:#666;
+font-size:18px;
+}
+
+.login-btn,
+.results-btn{
+width:100%;
+height:70px;
+border:none;
+border-radius:14px;
+font-size:20px;
+font-weight:700;
+cursor:pointer;
+}
+
+.login-btn{
+margin-bottom:18px;
+}
+
+.section-divider{
+width:100%;
+height:1px;
+background:rgba(0,0,0,.08);
+margin:10px 0 18px;
+}
+
+.login-card{
+max-width:500px;
+margin:30px auto;
+background:#ffffff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 4px 20px rgba(0,0,0,.12);
+text-align:center;
+}
+
+.login-card h2{
+margin-bottom:25px;
+color:#1e3a8a;
+}
+
+.form-group{
+margin-bottom:15px;
+}
+
+.form-group input{
+width:100%;
+padding:14px;
+font-size:16px;
+font-family:'Cairo',sans-serif;
+border:1px solid #d1d5db;
+border-radius:10px;
+box-sizing:border-box;
+}
+
+.form-group input:focus{
+outline:none;
+border-color:#2563eb;
+}
+
+.login-btn{
+width:100%;
+padding:14px;
+border:none;
+border-radius:10px;
+background:#2563eb;
+color:white;
+font-size:18px;
+font-family:'Cairo',sans-serif;
+cursor:pointer;
+}
+
+.login-btn:hover{
+background:#1d4ed8;
+}
+
+.error{
+margin-top:15px;
+color:#dc2626;
+font-weight:bold;
+}
+
+.info-box{
+margin-top:15px;
+font-size:14px;
+color:#555;
+}
+
+</style>
 
 </head>
 
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <div class="header">
+<div class="header">
 
-            <img src="logo.png"
-                 alt="شعار المدرسة"
-                 class="logo">
+<img
+src="logo.png"
+alt="شعار المدرسة"
+class="logo">
 
-            
-                <h1>من الصفر إلى النشر</h1>
+<h1>من الصفر إلى النشر</h1>
 
+<p>
 
-            <p>
 سلسلة تدريبية على
-<a href="https://www.facebook.com/share/p/1EWCNLxLcB/"
-   target="_blank"
-   class="school-link">
-   صفحة المدرسة الشرعية
+
+<a
+href="https://www.facebook.com/share/p/1EWCNLxLcB/"
+target="_blank"
+class="school-link">
+
+صفحة المدرسة الشرعية
+
 </a>
+
 </p>
 
-      
+</div>
 
-        <div class="exam-card">
+<div class="login-card">
 
-            <h2>
-                الاختبار التجريبي
-            </h2>
 
-            <p>
-                عدد الأسئلة: 5 أسئلة
-            </p>
 
-            <p>
-                مدة الاختبار: 5 دقائق
-            </p>
+```
+<h2 class="login-title">تسجيل الدخول</h2>
 
-            <a href="#"
-               class="start-btn"
-               onclick="startExam()">
+<div class="form-group">
 
-                بدء الاختبار
+<input
+type="text"
+id="username"
+class="login-input"
+placeholder="اسم المستخدم"
+value="stud">
 
-            </a>
+<input
+type="password"
+id="password"
+class="login-input"
+placeholder="كلمة المرور"
+value="stud@2026">
 
-        </div>
+</div>
 
-    </div>
+<div class="demo-info">
+للتجربة الحالية:
+<br>
+اسم المستخدم: stud
+<br>
+كلمة المرور: stud@2026
+</div>
 
-    <!-- التذييل الرسمي -->
+<button class="login-btn" onclick="login()">
+دخول
+</button>
 
-    <footer class="footer">
+<div class="section-divider"></div>
 
-        © مدرسة إناث قلقيلية الشرعية
+<button
+class="results-btn"
+onclick="window.location.href='admin.html'">
+لوحة النتائج
+</button>
 
-        <br>
+<div id="error" class="error"></div>
 
-        وزارة الأوقاف والشؤون الدينية الفلسطينية
+</div>
 
-    </footer>
+<footer class="footer">
 
-    <script>
+© مدرسة إناث قلقيلية الشرعية
 
-        function startExam() {
+<br>
 
-            localStorage.removeItem(
-                "answers"
-            );
+وزارة الأوقاف والشؤون الدينية الفلسطينية
 
-            localStorage.removeItem(
-                "currentQuestion"
-            );
+</footer>
 
-            localStorage.removeItem(
-                "score"
-            );
+<script>
 
-            window.location.href =
-                "exam.html";
+async function login() {
 
-        }
+const username =
+document
+.getElementById("username")
+.value
+.trim();
 
-    </script>
+const password =
+document
+.getElementById("password")
+.value
+.trim();
+
+document
+.getElementById("error")
+.innerText = "";
+
+try {
+
+const response =
+await fetch(
+"/api/auth/login",
+{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+username,
+password
+})
+}
+);
+
+const data =
+await response.json();
+
+if(data.success){
+
+localStorage.setItem(
+"currentUser",
+JSON.stringify(data.user)
+);
+
+window.location.href =
+"exam.html";
+
+}else{
+
+document
+.getElementById("error")
+.innerText =
+"بيانات الدخول غير صحيحة";
+
+}
+
+}catch(error){
+
+console.error(error);
+
+document
+.getElementById("error")
+.innerText =
+"تعذر الاتصال بالخادم";
+
+}
+
+}
+
+</script>
 
 </body>
 

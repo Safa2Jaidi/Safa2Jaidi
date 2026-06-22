@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>لوحة النتائج</title>
+
+<link rel="icon" type="image/png" href="logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+<style>
+    .footer{
+margin-top:40px;
+padding:20px;
+text-align:center;
+
+background:#0d203b;
+
+border-radius:18px;
+
+border:1px solid rgba(20,214,181,.25);
+
+color:#cfd8e3;
+
+line-height:1.9;
+}
+/* =========================
+بطاقة عنوان لوحة النتائج
+========================= */
+
+
+.title-card{
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+width:100%;
+
+background:#0d203b;
+border-radius:18px;
+border:1px solid rgba(20,214,181,.25);
+
+padding:20px 30px;
+margin-bottom:20px;
+
+box-sizing:border-box;
+}
+
+.title-center{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:30px;
+font-weight:800;
+color:#ffffff;
+}
+
+.back-btn{
+background:#14d6b5;
+color:#081325 !important;
+text-decoration:none;
+font-weight:800;
+padding:12px 22px;
+border-radius:12px;
+transition:.25s;
+}
+
+.back-btn:hover{
+opacity:.9;
+text-decoration:none;
+}
+
+
+
+@media(max-width:768px){
+
+.title-card{
+flex-direction:column;
+gap:15px;
+text-align:center;
+}
+
+.title-center{
+font-size:24px;
+}
+
+.title-spacer{
+display:none;
+}
+
+.back-btn{
+width:100%;
+max-width:250px;
+text-align:center;
+}
+
+}
+
+body{
+font-family:'Tajawal',sans-serif;
+background:#081325;
+color:#ffffff;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.logo{
+width:90px;
+display:block;
+margin:0 auto 15px;
+}
+
+h1{
+text-align:center;
+font-size:30px;
+font-weight:800;
+margin-bottom:10px;
+color:#ffffff;
+}
+
+.subtitle{
+text-align:center;
+color:#cfd8e3;
+margin-bottom:25px;
+}
+
+.card,
+.admin-panel,
+.stat{
+background:#0d203b;
+border-radius:18px;
+border:1px solid rgba(20,214,181,.25);
+box-shadow:none;
+}
+
+.card{
+padding:20px;
+}
+
+.admin-panel{
+padding:20px;
+margin-bottom:20px;
+display:none;
+}
+
+.stats{
+display:flex;
+gap:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+
+.stat{
+flex:1;
+min-width:180px;
+padding:15px;
+text-align:center;
+}
+
+.stat h3{
+margin-bottom:10px;
+color:#14d6b5;
+}
+
+.stat p{
+font-size:22px;
+font-weight:700;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th{
+background:#14d6b5;
+color:#081325;
+padding:12px;
+font-weight:800;
+}
+
+td{
+padding:12px;
+border-bottom:1px solid rgba(255,255,255,.08);
+text-align:center;
+}
+
+tr:hover{
+background:#162d4d;
+}
+
+input{
+padding:12px;
+margin:5px;
+border:none;
+border-radius:10px;
+background:#162d4d;
+color:white;
+}
+
+button{
+padding:10px 15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
+
+.lock-btn{
+font-size:24px;
+background:none;
+color:#14d6b5;
+}
+
+.delete-btn{
+background:#dc2626;
+color:white;
+}
+
+.admin-login-btn{
+background:#14d6b5;
+color:#081325;
+font-weight:800;
+}
+
+
+.footer a{
+color:#14d6b5;
+text-decoration:none;
+font-weight:700;
+}
+
+.footer a:hover{
+text-decoration:underline;
+}
+
+.thanks-box{
+margin:35px auto 0;
+max-width:550px;
+background:#0d203b;
+padding:25px;
+border-radius:20px;
+text-align:center;
+border:1px solid rgba(20,214,181,.25);
+}
+
+.thanks-box strong{
+color:#14d6b5;
+}
+
+/* =========================
+جدول النتائج المتجاوب
+========================= */
+
+.card{
+overflow-x:auto;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+table-layout:fixed;
+}
+
+th,
+td{
+padding:12px;
+text-align:center;
+vertical-align:middle;
+
+word-break:break-word;
+overflow-wrap:anywhere;
+
+font-size:15px;
+}
+
+td{
+max-width:180px;
+}
+
+th:nth-child(1),
+td:nth-child(1){
+width:60px;
+}
+
+th:nth-child(2),
+td:nth-child(2){
+width:120px;
+}
+
+th:nth-child(3),
+td:nth-child(3){
+width:120px;
+}
+
+th:nth-child(4),
+td:nth-child(4){
+width:100px;
+}
+
+th:nth-child(5),
+td:nth-child(5){
+width:220px;
+}
+
+/* الهاتف */
+
+@media (max-width:768px){
+
+table{
+min-width:650px;
+}
+
+th,
+td{
+font-size:13px;
+padding:10px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <img src="logo.png" class="logo">
+
+
+
+<div class="title-card">
+
+<a
+href="https://drive.google.com/file/d/1gY6ubjoRrL8yQz2evEo1Q4riRDrBD23J/view?usp=sharing"
+target="_blank"
+class="back-btn">
+دليل التدريب
+</a>
+
+<div class="title-center">
+
+<button
+class="lock-btn"
+onclick="showAdminPanel()">
+🔒
+</button>
+
+<span>
+لوحة النتائج
+</span>
+
+</div>
+
+<a
+href="index.html"
+class="back-btn">
+العودة للرئيسية
+</a>
+
+
+</div>
+
+<div
+class="admin-panel"
+id="adminPanel">
+
+<h3>
+تسجيل دخول الإدارة
+</h3>
+
+<input
+type="text"
+id="adminUser"
+placeholder="اسم المستخدم">
+
+<input
+type="password"
+id="adminPass"
+placeholder="كلمة المرور">
+
+<button
+onclick="adminLogin()">
+
+دخول
+
+</button>
+
+<div
+id="adminActions"
+style="display:none;margin-top:15px;">
+
+<button
+class="delete-btn"
+onclick="deleteAllResults()">
+
+حذف جميع النتائج
+
+</button>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<h3>عدد المشاركات</h3>
+<p id="totalAttempts">0</p>
+</div>
+
+<div class="stat">
+<h3>أعلى نتيجة</h3>
+<p id="topScore">0</p>
+</div>
+
+<div class="stat">
+<h3>متوسط النتائج</h3>
+<p id="averageScore">0%</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>#</th>
+
+<th>المستخدم</th>
+
+<th>الدرجة</th>
+
+<th>النسبة</th>
+
+<th>التاريخ</th>
+
+<th id="deleteHeader" style="display:none;">
+حذف
+</th>
+
+</tr>
+
+</thead>
+
+<tbody id="resultsTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+
+<footer class="footer">
+
+© مدرسة إناث قلقيلية الشرعية
+
+<br>
+
+وزارة الأوقاف والشؤون الدينية الفلسطينية
+
+</footer>
+
+</div>
+
+<script>
+
+let isAdmin = false;
+
+function showAdminPanel(){
+
+document.getElementById(
+"adminPanel"
+).style.display="block";
+
+}
+
+function adminLogin(){
+
+const user =
+document.getElementById(
+"adminUser"
+).value;
+
+const pass =
+document.getElementById(
+"adminPass"
+).value;
+
+if(
+user==="Safa2" &&
+pass==="123456789"
+){
+
+isAdmin=true;
+
+document.getElementById(
+"adminActions"
+).style.display="block";
+
+document.getElementById(
+"deleteHeader"
+).style.display="table-cell";
+
+loadResults();
+
+alert("تم فتح وضع الإدارة");
+
+}
+
+else{
+
+alert("بيانات غير صحيحة");
+
+}
+
+}
+
+async function deleteResult(id){
+
+if(!confirm("حذف النتيجة؟"))
+return;
+
+await fetch(
+"/api/results/delete-one",
+{
+method:"POST",
+headers:{
+"Content-Type":
+"application/json"
+},
+body:JSON.stringify({
+username:"Safa2",
+password:"123456789",
+id:id
+})
+}
+);
+
+loadResults();
+
+}
+
+async function deleteAllResults(){
+
+if(
+!confirm(
+"سيتم حذف جميع النتائج"
+)
+)return;
+
+await fetch(
+"/api/results/delete-all",
+{
+method:"POST",
+headers:{
+"Content-Type":
+"application/json"
+},
+body:JSON.stringify({
+username:"Safa2",
+password:"123456789"
+})
+}
+);
+
+loadResults();
+
+}
+
+async function loadResults(){
+
+const response =
+await fetch(
+"/api/results/list"
+);
+
+const data =
+await response.json();
+
+const table =
+document.getElementById(
+"resultsTable"
+);
+
+table.innerHTML="";
+
+let maxScore=0;
+
+let totalPercent=0;
+
+data.results.forEach(
+(result,index)=>{
+
+if(
+result.percentage >
+maxScore
+){
+maxScore=
+result.percentage;
+}
+
+totalPercent +=
+result.percentage;
+
+let deleteColumn="";
+
+if(isAdmin){
+
+deleteColumn=
+`
+<td>
+<button
+class="delete-btn"
+onclick="deleteResult('${result._id}')">
+
+🗑
+
+</button>
+</td>
+`;
+
+}
+
+table.innerHTML +=
+`
+<tr>
+
+<td>${index+1}</td>
+
+<td>${result.username}</td>
+
+<td>${result.score}/${result.total}</td>
+
+<td>${result.percentage}%</td>
+
+<td>
+${new Intl.DateTimeFormat(
+'ar-PS-u-nu-latn',
+{
+day:'2-digit',
+month:'2-digit',
+year:'numeric',
+hour:'2-digit',
+minute:'2-digit',
+second:'2-digit',
+hour12:false
+}
+).format(new Date(result.createdAt))}
+</td>
+
+${deleteColumn}
+
+</tr>
+`;
+
+});
+
+document.getElementById(
+"totalAttempts"
+).innerText =
+data.count;
+
+document.getElementById(
+"topScore"
+).innerText =
+maxScore + "%";
+
+document.getElementById(
+"averageScore"
+).innerText =
+data.count>0
+?
+Math.round(
+totalPercent /
+data.count
+)+"%"
+:
+"0%";
+
+}
+
+loadResults();
+
+</script>
+
+</body>
+
+</html>
