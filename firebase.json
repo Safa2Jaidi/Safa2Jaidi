@@ -2,5 +2,10 @@
   "hosting": {
     "site": "exam05",
     "public": "public"
+  },
+
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
   }
 }

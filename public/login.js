@@ -1,74 +1,65 @@
 async function login() {
 
     const username =
-        document
-        .getElementById("username")
-        .value
-        .trim();
+        document.getElementById("username").value.trim();
 
     const password =
-        document
-        .getElementById("password")
-        .value
-        .trim();
+        document.getElementById("password").value.trim();
 
     const message =
         document.getElementById("message");
 
     message.innerText = "";
 
-    if (!username || !password) {
-
-        message.innerText =
-            "يرجى إدخال جميع البيانات";
-
-        return;
-    }
-
     try {
 
-        const response =
-            await fetch("/api/login", {
+        const snapshot =
+            await db.collection("users")
+                .where("username","==",username)
+                .where("password","==",password)
+                .where("active","==",true)
+                .get();
 
-                method: "POST",
+        if (!snapshot.empty) {
 
-                headers: {
-                    "Content-Type":
-                    "application/json"
-                },
-
-                body: JSON.stringify({
-                    username,
-                    password
-                })
-
-            });
-
-        const data =
-            await response.json();
-
-        if (data.success) {
+            const user =
+                snapshot.docs[0].data();
 
             localStorage.setItem(
                 "loggedUser",
-                data.username
+                user.username
             );
 
-            window.location.href =
-                "exam.html";
+            localStorage.setItem(
+                "userRole",
+                user.role
+            );
+
+            if (user.role === "admin") {
+
+                window.location.href =
+                    "admin.html";
+
+            } else {
+
+                window.location.href =
+                    "exam.html";
+
+            }
 
         } else {
 
             message.innerText =
-                data.message;
+                "اسم المستخدم أو كلمة المرور غير صحيحة";
 
         }
 
     } catch (error) {
 
+        console.error(error);
+
         message.innerText =
-            "تعذر الاتصال بالخادم";
+            "خطأ في الاتصال بقاعدة البيانات";
 
     }
-
 }
